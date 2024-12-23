@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SelectLetter : MonoBehaviour
 {
-    private string selectedLetter;
+    public string selectedLetter;
 
     private AlphabetButton[] alphabet;
+
+    public UnityEvent letterSelected;
 
     private void Start()
     {
@@ -16,7 +19,7 @@ public class SelectLetter : MonoBehaviour
     public void SetLetter(string l)
     {
         selectedLetter = l;
-        Debug.Log(selectedLetter);
+        letterSelected.Invoke();
     }
 
     public void ResetButtons()
@@ -25,5 +28,6 @@ public class SelectLetter : MonoBehaviour
         {
             alphabetButton.Activate();
         }
+        selectedLetter = string.Empty;
     }
 }

@@ -16,5 +16,10 @@ public class Player
         skipped = 0;
         this.time = time;
     }
+
+    public void TimeMove()
+    {
+        time -= 1;
+    }
 }
 

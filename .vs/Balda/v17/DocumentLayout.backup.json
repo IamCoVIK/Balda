@@ -3,28 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\xaxa1\\Balda\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2DD6259D-8AF4-63BD-7C4D-A3765A373171}|GameAssembly.csproj|c:\\users\\xaxa1\\balda\\assets\\scripts\\model\\gamelogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2DD6259D-8AF4-63BD-7C4D-A3765A373171}|GameAssembly.csproj|C:\\Users\\xaxa1\\Balda\\assets\\scripts\\model\\gamelogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2DD6259D-8AF4-63BD-7C4D-A3765A373171}|GameAssembly.csproj|solutionrelative:assets\\scripts\\model\\gamelogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DD6259D-8AF4-63BD-7C4D-A3765A373171}|GameAssembly.csproj|C:\\Users\\xaxa1\\Balda\\assets\\scripts\\view\\gridbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DD6259D-8AF4-63BD-7C4D-A3765A373171}|GameAssembly.csproj|solutionrelative:assets\\scripts\\view\\gridbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DD6259D-8AF4-63BD-7C4D-A3765A373171}|GameAssembly.csproj|c:\\users\\xaxa1\\balda\\assets\\scripts\\model\\records.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DD6259D-8AF4-63BD-7C4D-A3765A373171}|GameAssembly.csproj|solutionrelative:assets\\scripts\\model\\records.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2DD6259D-8AF4-63BD-7C4D-A3765A373171}|GameAssembly.csproj|c:\\users\\xaxa1\\balda\\assets\\scripts\\model\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2DD6259D-8AF4-63BD-7C4D-A3765A373171}|GameAssembly.csproj|solutionrelative:assets\\scripts\\model\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2DD6259D-8AF4-63BD-7C4D-A3765A373171}|GameAssembly.csproj|C:\\Users\\xaxa1\\Balda\\assets\\scripts\\view\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B7E9A3B4-23DB-FB85-155B-9EC36CBCA18A}|Tests.csproj|c:\\users\\xaxa1\\balda\\assets\\tests\\test_records.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7E9A3B4-23DB-FB85-155B-9EC36CBCA18A}|Tests.csproj|solutionrelative:assets\\tests\\test_records.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DD6259D-8AF4-63BD-7C4D-A3765A373171}|GameAssembly.csproj|c:\\users\\xaxa1\\balda\\assets\\scripts\\view\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2DD6259D-8AF4-63BD-7C4D-A3765A373171}|GameAssembly.csproj|solutionrelative:assets\\scripts\\view\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2DD6259D-8AF4-63BD-7C4D-A3765A373171}|GameAssembly.csproj|C:\\Users\\xaxa1\\Balda\\assets\\scripts\\view\\view.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DD6259D-8AF4-63BD-7C4D-A3765A373171}|GameAssembly.csproj|solutionrelative:assets\\scripts\\view\\view.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2DD6259D-8AF4-63BD-7C4D-A3765A373171}|GameAssembly.csproj|C:\\Users\\xaxa1\\Balda\\assets\\scripts\\view\\selectletter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DD6259D-8AF4-63BD-7C4D-A3765A373171}|GameAssembly.csproj|solutionrelative:assets\\scripts\\view\\selectletter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2DD6259D-8AF4-63BD-7C4D-A3765A373171}|GameAssembly.csproj|C:\\Users\\xaxa1\\Balda\\assets\\scripts\\presenter\\presenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DD6259D-8AF4-63BD-7C4D-A3765A373171}|GameAssembly.csproj|solutionrelative:assets\\scripts\\presenter\\presenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2DD6259D-8AF4-63BD-7C4D-A3765A373171}|GameAssembly.csproj|C:\\Users\\xaxa1\\Balda\\assets\\scripts\\view\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DD6259D-8AF4-63BD-7C4D-A3765A373171}|GameAssembly.csproj|solutionrelative:assets\\scripts\\view\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2DD6259D-8AF4-63BD-7C4D-A3765A373171}|GameAssembly.csproj|C:\\Users\\xaxa1\\Balda\\assets\\scripts\\model\\gamemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DD6259D-8AF4-63BD-7C4D-A3765A373171}|GameAssembly.csproj|solutionrelative:assets\\scripts\\model\\gamemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2DD6259D-8AF4-63BD-7C4D-A3765A373171}|GameAssembly.csproj|C:\\Users\\xaxa1\\Balda\\assets\\scripts\\view\\uimessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DD6259D-8AF4-63BD-7C4D-A3765A373171}|GameAssembly.csproj|solutionrelative:assets\\scripts\\view\\uimessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DD6259D-8AF4-63BD-7C4D-A3765A373171}|GameAssembly.csproj|C:\\Users\\xaxa1\\Balda\\assets\\scripts\\view\\alphabetbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DD6259D-8AF4-63BD-7C4D-A3765A373171}|GameAssembly.csproj|solutionrelative:assets\\scripts\\view\\alphabetbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,19 +50,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\Users\\xaxa1\\Balda\\Assets\\Scripts\\Model\\Player.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Model\\Player.cs",
               "ToolTip": "C:\\Users\\xaxa1\\Balda\\Assets\\Scripts\\Model\\Player.cs",
               "RelativeToolTip": "Assets\\Scripts\\Model\\Player.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T05:32:45.014Z",
+              "WhenOpened": "2024-12-23T06:10:12.527Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Records.cs",
+              "DocumentMoniker": "C:\\Users\\xaxa1\\Balda\\Assets\\Scripts\\Model\\Records.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Model\\Records.cs",
+              "ToolTip": "C:\\Users\\xaxa1\\Balda\\Assets\\Scripts\\Model\\Records.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Model\\Records.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-23T06:05:40.286Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Test_Records.cs",
+              "DocumentMoniker": "C:\\Users\\xaxa1\\Balda\\Assets\\Tests\\Test_Records.cs",
+              "RelativeDocumentMoniker": "Assets\\Tests\\Test_Records.cs",
+              "ToolTip": "C:\\Users\\xaxa1\\Balda\\Assets\\Tests\\Test_Records.cs",
+              "RelativeToolTip": "Assets\\Tests\\Test_Records.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-23T06:02:29.463Z",
               "EditorCaption": ""
             },
             {
@@ -57,62 +99,84 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\Model\\GameLogic.cs",
               "ToolTip": "C:\\Users\\xaxa1\\Balda\\Assets\\Scripts\\Model\\GameLogic.cs",
               "RelativeToolTip": "Assets\\Scripts\\Model\\GameLogic.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAQwCIAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAAwHUAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-07T08:51:29.693Z",
+              "WhenOpened": "2024-12-15T10:37:28.497Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UIMessage.cs",
+              "DocumentMoniker": "C:\\Users\\xaxa1\\Balda\\Assets\\Scripts\\View\\UIMessage.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\View\\UIMessage.cs",
+              "ToolTip": "C:\\Users\\xaxa1\\Balda\\Assets\\Scripts\\View\\UIMessage.cs",
+              "RelativeToolTip": "Assets\\Scripts\\View\\UIMessage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T10:37:51.539Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "GameModel.cs",
-              "DocumentMoniker": "C:\\Users\\xaxa1\\Balda\\Assets\\Scripts\\Model\\GameModel.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Model\\GameModel.cs",
-              "ToolTip": "C:\\Users\\xaxa1\\Balda\\Assets\\Scripts\\Model\\GameModel.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Model\\GameModel.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAcwEAAAABAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-07T05:07:03.698Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Presenter.cs",
-              "DocumentMoniker": "C:\\Users\\xaxa1\\Balda\\Assets\\Scripts\\Presenter\\Presenter.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Presenter\\Presenter.cs",
-              "ToolTip": "C:\\Users\\xaxa1\\Balda\\Assets\\Scripts\\Presenter\\Presenter.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Presenter\\Presenter.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAcwD4AAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-07T05:07:02.585Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "View.cs",
-              "DocumentMoniker": "C:\\Users\\xaxa1\\Balda\\Assets\\Scripts\\View\\View.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\View\\View.cs",
-              "ToolTip": "C:\\Users\\xaxa1\\Balda\\Assets\\Scripts\\View\\View.cs",
-              "RelativeToolTip": "Assets\\Scripts\\View\\View.cs",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAkwG4AAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-07T05:35:41.211Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "Game.cs",
               "DocumentMoniker": "C:\\Users\\xaxa1\\Balda\\Assets\\Scripts\\View\\Game.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\View\\Game.cs",
               "ToolTip": "C:\\Users\\xaxa1\\Balda\\Assets\\Scripts\\View\\Game.cs",
               "RelativeToolTip": "Assets\\Scripts\\View\\Game.cs",
-              "ViewState": "AgIAAFgAAAAAAAAAAAAcwHkAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAM8AAAAAAAAAAADwv98AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-07T09:03:52.797Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SelectLetter.cs",
+              "DocumentMoniker": "C:\\Users\\xaxa1\\Balda\\Assets\\Scripts\\View\\SelectLetter.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\View\\SelectLetter.cs",
+              "ToolTip": "C:\\Users\\xaxa1\\Balda\\Assets\\Scripts\\View\\SelectLetter.cs",
+              "RelativeToolTip": "Assets\\Scripts\\View\\SelectLetter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T08:13:58.254Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Board.cs",
+              "DocumentMoniker": "C:\\Users\\xaxa1\\Balda\\Assets\\Scripts\\View\\Board.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\View\\Board.cs",
+              "ToolTip": "C:\\Users\\xaxa1\\Balda\\Assets\\Scripts\\View\\Board.cs",
+              "RelativeToolTip": "Assets\\Scripts\\View\\Board.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T08:41:37.635Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GridButton.cs",
+              "DocumentMoniker": "C:\\Users\\xaxa1\\Balda\\Assets\\Scripts\\View\\GridButton.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\View\\GridButton.cs",
+              "ToolTip": "C:\\Users\\xaxa1\\Balda\\Assets\\Scripts\\View\\GridButton.cs",
+              "RelativeToolTip": "Assets\\Scripts\\View\\GridButton.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAywFAAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T08:13:41.541Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AlphabetButton.cs",
+              "DocumentMoniker": "C:\\Users\\xaxa1\\Balda\\Assets\\Scripts\\View\\AlphabetButton.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\View\\AlphabetButton.cs",
+              "ToolTip": "C:\\Users\\xaxa1\\Balda\\Assets\\Scripts\\View\\AlphabetButton.cs",
+              "RelativeToolTip": "Assets\\Scripts\\View\\AlphabetButton.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T08:13:35.642Z"
             }
           ]
         }

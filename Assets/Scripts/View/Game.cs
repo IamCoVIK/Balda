@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using static log4net.Appender.ColoredConsoleAppender;
 
 public class Game : MonoBehaviour
 {
@@ -18,19 +19,34 @@ public class Game : MonoBehaviour
     [SerializeField] private Image words1;
     [SerializeField] private Image words2;
     [SerializeField] private UIMessage message;
+    [SerializeField] private Button cancel;
+    [SerializeField] private SelectLetter selectLetter;
+    [SerializeField] private Board boardControl;
+    [SerializeField] private Button skipButton;
+    [SerializeField] private Button makeMove;
+    [SerializeField] private TMP_Text list1;
+    [SerializeField] private TMP_Text list2;
 
-    private GridButton[,] grid;
-    private int boardSize;
+    public GridButton[,] grid;
+    public int boardSize;
     private string startWord;
     private bool isTimeControlEnabled;
+
+    private GridButton currentCell;
 
     private void OnEnable()
     {
         message.gameObject.SetActive(false);
+        cancel.gameObject.SetActive(false);
+        makeMove.gameObject.SetActive(false);
         GetBoardSize();
         GenerateBoard(boardSize);
         GetPoints();
         DisplayStartWord();
+        GetTurn();
+
+        list1.text = string.Empty;
+        list2.text = string.Empty;
     }
 
     private void Start()
@@ -79,6 +95,7 @@ public class Game : MonoBehaviour
                 buttonRect.sizeDelta = new Vector2(buttonSize, buttonSize);
                 buttonRect.anchoredPosition = new Vector2(x * buttonSize, y * buttonSize);
                 grid[x, y] = button.GetComponent<GridButton>();
+                grid[x, y].coords = (x, y);
             }
         }
     }
@@ -88,7 +105,7 @@ public class Game : MonoBehaviour
         int x = startWord.Length / (int)2;
         for (int y = 0; y < startWord.Length; y++)
         {
-            grid[y, x].SetLetter(startWord[y].ToString());
+            grid[y, x].SetLetter(startWord[y].ToString().ToUpper());
         }
     }
 
@@ -111,23 +128,183 @@ public class Game : MonoBehaviour
         time2.text = time.t2;
     }
 
-    private void GetTurn()
+    private bool GetTurn()
     {
         if (view.GetTurn())
         {
             words1.color = Color.green;
             words2.color = Color.gray;
+            return true;
         }
         else
         {
             words2.color = Color.green;
             words1.color = Color.gray;
+            return false;
         }
     }
 
-    public string MakeMove(string word, string letter, (int, int) cell)
+    public void StartMove()
     {
-        return view.MakeMove(word, letter, cell);
+        cancel.gameObject.SetActive(true);
+        makeMove.gameObject.SetActive(true);
+        makeMove.interactable = false;
+        skipButton.gameObject.SetActive(false);
+    }
+
+    public void GetCurrentCell()
+    {
+        currentCell = boardControl.currentButton;
+        makeMove.interactable = true;
+    }
+
+    public void CancelMove()
+    {
+        if (currentCell != null)
+        {
+            currentCell.SetLetter(string.Empty);
+            currentCell.InteractionOn();
+            currentCell = null;
+        }
+        ClearAfter();
+    }
+    private void ClearAfter()
+    {
+        cancel.gameObject.SetActive(false);
+        makeMove.gameObject.SetActive(false);
+        skipButton.gameObject.SetActive(true);
+        selectLetter.ResetButtons();
+        boardControl.wordSelection = false;
+        for (int y = 0; y < boardSize; y++)
+        {
+            for (int x = 0; x < boardSize; x++)
+            {
+                grid[y, x].InteractionOn();
+            }
+        }
+    }
+
+    public void MakeMove()
+    {
+        string word = FindWord();
+        Debug.Log(word);
+        string letter = currentCell.letter;
+        (int, int) cell = currentCell.coords;
+        string result = view.MakeMove(word, letter, cell);
+        if (result == string.Empty)
+        {
+            UnityAction act = () => CloseMessage();
+            message.Show("Такого слова нет!", act);
+        }
+        else
+        {
+            GetPoints();
+            if (!GetTurn())
+            {
+                list1.text += result + "\n";
+            }
+            else
+            {
+                list2.text += result + "\n";
+            }
+            currentCell = null;
+            ClearAfter();
+        }
+    }
+
+    public string FindWord()
+    {
+        GridButton current = FindStart();
+        Debug.Log(current.letter);
+        GridButton prev;
+        int[] dx = { 1, -1, 0, 0 };
+        int[] dy = { 0, 0, 1, -1 };
+
+        for (int i = 0; i < 4; i++)
+        {
+            int neighborX = current.coords.x + dx[i];
+            int neighborY = current.coords.y + dy[i];
+
+            if (currentCell.IsNeighborNotInteractable(neighborX, neighborY))
+            {
+                prev = current;
+                currentCell = grid[neighborX, neighborY];
+            }
+        }
+        while (true)
+        {
+
+        }
+
+        //return FindWordRecursive(startButton.coords.x, startButton.coords.y, "", new HashSet<(int, int)>());
+    }
+
+    /*private string FindWordRecursive(int x, int y, string currentWord, HashSet<(int, int)> visited)
+    {
+        if (x < 0 || x >= boardSize || y < 0 || y >= boardSize) return currentWord;
+
+        // Проверяем, что кнопка интерактивна и имеет букву
+        if (grid[y, x].Interactable() || grid[y, x].letter == string.Empty) return currentWord;
+
+        if (visited.Contains((x, y)))
+        {
+            return currentWord;
+        }
+
+        visited.Add((x, y));
+        string newWord = currentWord + grid[y, x].letter;
+        int[,] offsets = { { 0, 1 }, { 0, -1 }, { 1, 0 }, { -1, 0 } };
+
+        string maxWord = newWord;
+        for (int i = 0; i < offsets.GetLength(0); i++)
+        {
+            int neighborX = x + offsets[i, 0];
+            int neighborY = y + offsets[i, 1];
+            string foundWord = FindWordRecursive(neighborX, neighborY, newWord, visited);
+            if (foundWord.Length > maxWord.Length)
+            {
+                maxWord = foundWord;
+            }
+        }
+        return maxWord;
+    }*/
+
+    public GridButton FindStart()
+    {
+        for (int y = 0; y < boardSize; y++)
+        {
+            for (int x = 0; x < boardSize; x++)
+            {
+                if (!grid[y, x].Interactable() && grid[y, x].letter != string.Empty)
+                {
+                    if (HasNonInteractableNeighbor(x, y) && grid[y, x].CountNonInteractableNeighbors() == 1)
+                    {
+                        return grid[y, x];
+                    }
+                }
+            }
+        }
+        return null;
+    }
+
+    private bool HasNonInteractableNeighbor(int x, int y)
+    {
+        int[,] offsets = { { 0, 1 }, { 0, -1 }, { 1, 0 }, { -1, 0 } };
+
+        for (int i = 0; i < offsets.GetLength(0); i++)
+        {
+            int neighborX = x + offsets[i, 0];
+            int neighborY = y + offsets[i, 1];
+
+            if (neighborX >= 0 && neighborX < boardSize && neighborY >= 0 && neighborY < boardSize)
+            {
+                if (!grid[neighborY, neighborX].Interactable())
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     public void SkipTurn()
@@ -162,5 +339,10 @@ public class Game : MonoBehaviour
     {
         UnityAction act = () => view.ToRecords(points);
         message.Show(m, act);
+    }
+
+    private void CloseMessage()
+    {
+        message.gameObject.SetActive(false);
     }
 }

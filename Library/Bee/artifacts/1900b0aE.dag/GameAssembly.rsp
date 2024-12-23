@@ -350,6 +350,7 @@
 "Assets/Scripts/Model/Settings.cs"
 "Assets/Scripts/Presenter/Presenter.cs"
 "Assets/Scripts/View/AlphabetButton.cs"
+"Assets/Scripts/View/Board.cs"
 "Assets/Scripts/View/DropdownInteraction.cs"
 "Assets/Scripts/View/Game.cs"
 "Assets/Scripts/View/GridButton.cs"

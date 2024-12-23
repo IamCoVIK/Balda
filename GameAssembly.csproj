@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\Model\Record.cs" />
     <Compile Include="Assets\Scripts\View\MainMenu.cs" />
     <Compile Include="Assets\Scripts\View\GridButton.cs" />
+    <Compile Include="Assets\Scripts\View\Board.cs" />
     <Compile Include="Assets\Scripts\Model\GameModel.cs" />
     <Compile Include="Assets\Scripts\View\Game.cs" />
     <Compile Include="Assets\Scripts\Model\Records.cs" />

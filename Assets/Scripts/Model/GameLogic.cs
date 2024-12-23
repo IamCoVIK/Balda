@@ -1,3 +1,5 @@
+using Codice.CM.Client.Differences;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
@@ -7,7 +9,7 @@ public class GameLogic
 {
     private Settings settings;
 
-    private string[,] board;
+    private char[,] board;
     private int size;
 
     private Player player1;
@@ -24,7 +26,7 @@ public class GameLogic
         this.settings = settings;
 
         size = settings.startWord.Length;
-        board = new string[size, size];
+        board = new char[size, size];
         AddStartWord(settings.startWord);
 
         player1 = new Player(settings.timer);
@@ -40,7 +42,7 @@ public class GameLogic
         int y = startWord.Length / (int)2;
         for (int x = 0; x < size; x++)
         {
-            board[x, y] = startWord[x].ToString();
+            board[x, y] = startWord[x];
         }
     }
 
@@ -53,7 +55,7 @@ public class GameLogic
     {
         if (turn)
         {
-            player1.time -= 1;
+            player1.TimeMove();
             if (player1.time <= 0)
             {
                 GameOver.Invoke(!turn, player2.points);
@@ -61,8 +63,8 @@ public class GameLogic
         }
         else
         {
-            player2.points -= 1;
-            if (player2.points <= 0)
+            player2.TimeMove();
+            if (player2.time <= 0)
             {
                 GameOver.Invoke(!turn, player1.points);
             }
@@ -108,28 +110,80 @@ public class GameLogic
         return settings.startWord;
     }
 
-    public string MakeMove(string word, string letter, (int x, int y) cell)
+    private (int x, int y) placedLetterCords;
+
+    public void PlaceLetter(char letter, int x, int y)
     {
+        placedLetterCords = (x, y);
+        board[x, y] = letter;
+    }
+    public bool ConnectWord(int x, int y)
+    {
+        if (IsAccessable(x, y))
+        {
+            placedLetterCords = (x, y);
+            return true;
+        }
+        return false;
+    }
+
+    private bool IsAccessable(int x, int y)
+    {
+        if (IsEmpty(x, y))
+        {
+            if ((x - 1 == placedLetterCords.x || x + 1 == placedLetterCords.x) && y == placedLetterCords.y
+                || (y - 1 == placedLetterCords.x || y + 1 == placedLetterCords.x) && x == placedLetterCords.x)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private bool IsEmpty(int x, int y)
+    {
+        if (string.IsNullOrEmpty(board[x,y].ToString()))
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public string MakeMove(string word, char letter, (int, int) cell)
+    {
+        string rword = Reverse(word);
         if (settings.CheckWordDict(word))
         {
-            if (turn)
-            {
-                player1.words.Add(word);
-                AddLetter(letter, cell);
-                player1.points += word.Length;
-            }
-            else
-            {
-                player2.words.Add(word);
-                AddLetter(letter, cell);
-                player2.points += word.Length;
-            }
+            AddWord(word, letter, cell);
+            ChangeTurn(false);
+            return $"{word} {word.Length}";
+        }
+        else if (settings.CheckWordDict(rword))
+        {
+            AddWord(rword, letter, cell);
             ChangeTurn(false);
             return $"{word} {word.Length}";
         }
         else
         {
             return string.Empty;
+        }
+    }
+
+    private void AddWord(string word, char letter, (int, int) cell)
+    {
+        AddLetter(letter, cell);
+        if (turn)
+        {
+            player1.words.Add(word);
+            player1.points += word.Length;
+            player1.skipped = 0;
+        }
+        else
+        {
+            player2.words.Add(word);
+            player2.points += word.Length;
+            player2.skipped = 0;
         }
     }
 
@@ -143,15 +197,15 @@ public class GameLogic
         {
             player2.skipped += 1; 
         }
-        if (player1.skipped + player2.skipped == 6)
+        if (player1.skipped == 3 && player2.skipped == 3)
         {
             GameOver.Invoke(null, null);
-            return; //Конец игры
+            return;
         }
         ChangeTurn(true);
     }
 
-    private void AddLetter(string letter, (int x, int y) cell)
+    private void AddLetter(char letter, (int x, int y) cell)
     {
         board[cell.x, cell.y] = letter;
     }
@@ -166,15 +220,14 @@ public class GameLogic
         {
             player2.time += addTime;
         }
-        Debug.Log(addTime);
     }
 
     private void IsGameOver()
     {
         bool gameover = true;
-        for (int i = 0; i < board.Length; i++)
+        for (int i = 0; i < board.GetLength(0); i++)
         {
-            for (int j = 0; j < board.Length; j++)
+            for (int j = 0; j < board.GetLength(0); j++)
             {
                 if (board[i,j] == null)
                 {
@@ -186,17 +239,14 @@ public class GameLogic
         {
             if (player1.points > player2.points)
             {
-                //p1 win
                 GameOver.Invoke(turn, player1.points);
             }
             else if (player2.points < player1.points)
             {
-                //p2 win
                 GameOver.Invoke(turn, player2.points);
             }
             else
             {
-                //tie
                 GameOver.Invoke(null, null);
             }
         }
@@ -214,5 +264,13 @@ public class GameLogic
             b = b.Remove(b.Length - 1) + "\n";
         }
         return b;
+    }
+
+    static string Reverse(string str)
+    {
+        char[] arr = str.ToCharArray();
+        Array.Reverse(arr);
+        return new string(arr);
+
     }
 }
